@@ -190,4 +190,21 @@ def player_stats(name)
 end
 
 def big_shoe_rebounds
+  all_shoe_sizes = []
+    game_hash.each do |k, team_info|
+      #first level [home/away, colors/teamname/players ]
+      team_info[:players].each do |k, names|
+      #second level [colors/teamname/players, players actual names]
+      #trying to gather all shoe sizes to compare
+        all_shoe_sizes << names[:shoe]
+      biggest_shoe = all_shoe_sizes.max
+      team_info[:players].each do |k, names|
+        #still in second level 
+        #now comparing and returning rebounds for biggest shoe size
+       if names[:shoe] == biggest_shoe
+          return names[:rebounds]
+        end
+      end
+    end
+  end
 end
