@@ -348,25 +348,3 @@ def long_name_steals_a_ton?
        answer == long_name ? true : false
 end
 
-#name.max_by {|x| x.length}
-
-#data.reduce({}){|h, (k, v)| (h[v] ||= []) << k;h}.max
-
-#data.values.max got max value for each player
-
-game_hash.each do |team, info|
-    info.each do |label, value|
-      if label == :players
-         value.each do |name, data|
-            puts "#{name}"
-            data.each do |stat, value|
-             if stat == :points
-                 puts "#{stat} -- #{value}"
-            end
-          end
-         end
-       end
-    end
-  end
-
-
