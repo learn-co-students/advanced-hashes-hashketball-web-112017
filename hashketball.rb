@@ -158,13 +158,6 @@ def team_names
   }
 end
 
-def team_names
-  game_hash.collect {
-   |team_type, team_hash|
-    team_hash[:team_name]
-  }
-end
-
 def player_numbers(team)
 numbers = []
   game_hash.each {
